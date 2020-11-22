@@ -29,7 +29,5 @@ interface SchoolDao {
     @Query("SELECT *FROM school WHERE schoolName= :schoolName")
     suspend fun getSchoolWithStudents(schoolName: School)
     : List<SchoolWithStudents>
-
-
-
+    
 }

@@ -4,8 +4,10 @@ import androidx.room.Entity
 import androidx.room.PrimaryKey
 
 @Entity
-data class Director(
+data class Subject(
     @PrimaryKey(autoGenerate = false)
-    val directorName:String,
-    val schoolName:String
-)
+    val subjectName:String
+
+
+) {
+}

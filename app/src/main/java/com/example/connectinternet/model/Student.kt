@@ -7,5 +7,4 @@ data class Student(
     val studentName:String,
     val semester:Int,
     val schoolName:String
-
 )

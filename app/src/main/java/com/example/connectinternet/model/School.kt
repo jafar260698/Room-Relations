@@ -7,5 +7,4 @@ import androidx.room.PrimaryKey
 data class School(
     @PrimaryKey(autoGenerate = false)
     val schoolName:String
-) {
-}
+)
