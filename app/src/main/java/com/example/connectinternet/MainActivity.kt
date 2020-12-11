@@ -36,17 +36,20 @@ class MainActivity : AppCompatActivity() {
             Director("Alisher Normatov","Tatu")
         )
         val school= listOf(
-            School("Guldu"),
-            School("Tatu"),
-            School("Tuit")
+            School("Guldu",1),
+            School("Tatu",2),
+            School("Tuit",3)
         )
         val subject= listOf(
             Subject("Matematika"),
             Subject("informatika")
         )
         val students= listOf(
-            Student("Ali",2,"Guldu"),
-            Student("Vali",3,"Tuit")
+            Student("Ali",2,"Guldu",4),
+            Student("Vali",3,"Tuit",2),
+                Student("Gali",3,"Tuit",2),
+            Student("Dali",3,"Tuit",2)
+
         )
         val studentSubjectRelation= listOf(
             StudentSubjectCrossRef("Ali","playing chess"),
@@ -60,10 +63,13 @@ class MainActivity : AppCompatActivity() {
             students.forEach { dao.insertStudent(it)}
             studentSubjectRelation.forEach { dao.insertStudentSubjectCrossRef(it) }
 
-
             val schoolWithDirector=dao.getSchoolandDirectorwithSchoolName("Guldu")
-
-            val schoolWithStudent=dao.getSchoolWithStudents("Guldu")
+            val schoolWithStudent=dao.getSchoolWithStudents()
+            var i=0;
+            schoolWithStudent.forEach {
+                i++
+                Log.d("Jafar $i","Local Database ${it}")
+            }
         }
     }
 }

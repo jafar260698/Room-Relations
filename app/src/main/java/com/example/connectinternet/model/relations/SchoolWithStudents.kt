@@ -12,8 +12,8 @@ data class SchoolWithStudents(
     val school: School,
 
     @Relation(
-        parentColumn = "schoolName",
-        entityColumn = "schoolName"
+        parentColumn = "uuid",
+        entityColumn = "school_uuid"
         )
      val students: List<Student>
 ) {
